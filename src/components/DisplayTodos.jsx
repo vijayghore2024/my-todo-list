@@ -1,34 +1,10 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Todo from './Todo'
+import { TodoContext } from '../TodoContext'
 
 const DisplayTodos = () => {
 
-  const [myTodos, setMyTodos] = useState([
-    {
-      id: 1,
-      title: "Goto Market"
-    },
-    {
-      id: 2,
-      title: "Buy Some Books"
-    },
-    {
-      id: 3,
-      title: "Prepare for interview"
-    },
-    {
-      id: 4,
-      title: "Todo 4"
-    },
-    {
-      id: 5,
-      title: "Todo 5"
-    },
-   
-
-  ])
-
-
+  const { myTodos, setMyTodos } = useContext(TodoContext);
 
   return (
     <div className='row row-cols-4 my-4 justify-content-center'>
@@ -36,7 +12,7 @@ const DisplayTodos = () => {
       {
         myTodos.map(mytodo => <Todo todo={mytodo} />)
       }
-      
+
     </div>
   )
 }
