@@ -13,6 +13,7 @@ const AddTodo = () => {
         let todo ={
             id: myTodos.length + 1,
             title: userInpTodo,
+            status: false
         }
         setMyTodos([...myTodos, todo])
         setUserInpTodo('');

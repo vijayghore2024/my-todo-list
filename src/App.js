@@ -5,20 +5,7 @@ import { TodoContext } from "./TodoContext";
 import { useState } from "react";
 
 function App() {
-  const [myTodos, setMyTodos] = useState([
-    {
-      id: 1,
-      title: "Goto Market",
-    },
-    {
-      id: 2,
-      title: "Buy Some Books",
-    },
-    {
-      id: 3,
-      title: "Use Mobile Phone"
-    }
-  ]);
+  const [myTodos, setMyTodos] = useState([]);
 
   return (
     <div>

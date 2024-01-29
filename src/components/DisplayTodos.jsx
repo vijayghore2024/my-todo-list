@@ -7,13 +7,15 @@ const DisplayTodos = () => {
   const { myTodos, setMyTodos } = useContext(TodoContext);
 
   return (
+    <>
+    <h1>{(myTodos.length == 0) ? 'No Todos to display' : ''}</h1>
+    
     <div className='row row-cols-4 my-4 justify-content-center'>
 
-      {
-        myTodos.map(mytodo => <Todo todo={mytodo} />)
-      }
+      {myTodos.map(mytodo => <Todo key={mytodo.id} todo={mytodo} />)}
 
     </div>
+    </>
   )
 }
 
