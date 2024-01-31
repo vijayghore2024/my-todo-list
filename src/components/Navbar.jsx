@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { TodoContext } from '../TodoContext'
 
 const Navbar = () => {
+
+    const { mode, setMode } = useContext(TodoContext);
+
+    const changeMode = () => {
+        setMode(!mode)
+    }
+
     return (
-        <nav className="navbar navbar-expand-lg bg-primary"  data-bs-theme="dark">
+        <nav className={`navbar navbar-expand-lg bg-gradient bg-${mode ? 'primary' : 'dark'} border-bottom border-light border-1`} data-bs-theme="dark">
             <div className="container-fluid">
                 <a className="navbar-brand" href="#">TodoApp</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,11 +28,12 @@ const Navbar = () => {
                             <a className="nav-link" href="#">Contact</a>
                         </li>
                         <li className="nav-item">
-                            <button className="nav-link" href="#">☀️🌙</button>
+                            <button className="nav-link" onClick={changeMode}> {mode ? '🌙' : '☀️'}</button>
                         </li>
                     </ul>
                 </div>
             </div>
+
         </nav>
     )
 }

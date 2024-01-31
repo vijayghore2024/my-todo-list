@@ -6,10 +6,11 @@ import { useState } from "react";
 
 function App() {
   const [myTodos, setMyTodos] = useState([]);
+  const [mode, setMode] = useState(true)
 
   return (
-    <div>
-      <TodoContext.Provider value={{ myTodos, setMyTodos }}>
+    <div className={`bg-${mode? 'light': 'dark'}`}>
+      <TodoContext.Provider value={{ myTodos, setMyTodos, mode, setMode }}>
         <Navbar />
         <TodoApp />
         <Footer />

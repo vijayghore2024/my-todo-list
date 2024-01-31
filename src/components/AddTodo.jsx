@@ -3,22 +3,22 @@ import { TodoContext } from '../TodoContext'
 
 const AddTodo = () => {
 
-    const {myTodos, setMyTodos }= useContext(TodoContext);
+    const { myTodos, setMyTodos } = useContext(TodoContext);
 
     const [userInpTodo, setUserInpTodo] = useState('')
 
     const addTodo = () => {
-        console.log(userInpTodo)
         // add todo in arry
-        let todo ={
-            id: myTodos.length + 1,
+        let todo = {
+            // id: myTodos.length + 1,
+            id: (myTodos.length === 0 )? 1: myTodos[myTodos.length - 1].id + 1,
             title: userInpTodo,
             status: false
         }
         setMyTodos([...myTodos, todo])
         setUserInpTodo('');
     }
-    
+
     return (
         <div className="container p-5 border border-2 border-primary rounded-4">
             <div className="row justify-content-center">

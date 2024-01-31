@@ -8,7 +8,7 @@ const Todo = (props) => {
 
     const changeStatus = () => {
 
-        if(localStatus == true){
+        if(localStatus === true){
             if(window.confirm("Do you really want to mark todo as incomplete?")){
                 setLocalStatus(!localStatus)
             }

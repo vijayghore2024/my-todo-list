@@ -8,7 +8,7 @@ const DisplayTodos = () => {
 
   return (
     <>
-    <h1>{(myTodos.length == 0) ? 'No Todos to display' : ''}</h1>
+    <h1 className='my-3'>{(myTodos.length == 0) ? 'No Todos to display' : ''}</h1>
     
     <div className='row row-cols-4 my-4 justify-content-center'>
 
